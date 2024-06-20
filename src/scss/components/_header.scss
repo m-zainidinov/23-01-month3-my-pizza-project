@@ -10,13 +10,26 @@
     justify-content: space-between;
   }
 
+  button {
+    width: 156px;
+    height: 48px;
+    margin-top: 5px;
+    background-color: $orange;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+
   &__logo {
     display: flex;
 
     img {
       margin-right: 15px;
     }
-
     h1 {
       color: #181818;
       font-size: 24px;

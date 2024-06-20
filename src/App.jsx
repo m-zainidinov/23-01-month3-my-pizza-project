@@ -93,6 +93,7 @@ function App() {
                   price = {item.price}
                   dough = {item.dough}
                   size = {item.size}
+                  description={item.description}
                 />)
             }
           </div>
