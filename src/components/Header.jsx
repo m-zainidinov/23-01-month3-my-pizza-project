@@ -1,11 +1,9 @@
-// Undo till this point
-
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import logo from '../assets/img/pizza-logo.svg'
 import Modal from './Modal'
 import Login from './Login'
 
-const Header = () => {
+const Header = ({setQuery}) => {
   const [modal, setModal] = useState(false)
   const [showModal, setShowModal] = useState(false);
   const [outsideClick, setOutsideClick] = useState(false);
@@ -41,6 +39,8 @@ const Header = () => {
               <p>самая вкусная пицца во вселенной</p>
             </div>
           </div>
+
+          <input onChange={(e) => setQuery(e.target.value)} type="text" />
 
           <div className="header__cart">
             <a href="/cart.html" className="button button--cart">
