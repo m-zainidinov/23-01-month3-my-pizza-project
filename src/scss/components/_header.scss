@@ -13,16 +13,37 @@
   button {
     width: 156px;
     height: 48px;
-    margin-top: 5px;
     background-color: $orange;
     border: none;
     border-radius: 30px;
     cursor: pointer;
     color: #fff;
     font-size: 16px;
-    font-weight: bold;
   }
   
+  input {
+    width: 300px;
+    height: 48px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 30px;
+    background-color: darken(#f9f9f9, 2%);
+    color: black;
+    border: none;    
+  }
+
+  :root {
+    --placeholder-color-light: white;
+    --placeholder-color-dark: black;
+  }
+  
+  input::placeholder {
+    color: var(--placeholder-color-light);
+  }
+  
+  .dark-mode input::placeholder {
+    color: var(--placeholder-color-dark);
+  }
 
   &__logo {
     display: flex;

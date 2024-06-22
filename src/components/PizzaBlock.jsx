@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Modal from './Modal'
+import { ThemeContext } from '../App'
 
 function PizzaBlock ({img, title, price, dough, size, description}) {
   const [details, setDetails] = useState()
+  const { isDarkMode, toggleTheme } = useContext(ThemeContext)
   
   return (
     <>
@@ -13,20 +15,20 @@ function PizzaBlock ({img, title, price, dough, size, description}) {
               alt="Pizza" onClick={() => setDetails(true)}
         />
         <h4 className="pizza-block__title" onClick={() => setDetails(true)}>{title}</h4>
-        <div className="pizza-block__selector">
+        <div style={isDarkMode ? {background: '#282828'} : {}} className="pizza-block__selector">
           <ul>
-            <li className="active">{dough[1]}</li>
-            <li>{dough[0]}</li>
+            <li style={isDarkMode ? {background: '#FFA500'} : {}} className="active">{dough[1]}</li>
+            <li style={isDarkMode ? {color: '#fff'} : {}}>{dough[0]}</li>
           </ul>
           <ul>
-            <li className="active">{size[0]}</li>
-            <li>{size[1]}</li>
-            <li>{size[2]}</li>
+            <li style={isDarkMode ? {background: '#FFA500'} : {}} className="active">{size[0]}</li>
+            <li style={isDarkMode ? {color: '#fff'} : {}}>{size[1]}</li>
+            <li style={isDarkMode ? {color: '#fff'} : {}}>{size[2]}</li>
           </ul>
         </div>
         <div className="pizza-block__bottom">
           <div className="pizza-block__price">от {price} ₽</div>
-          <div className="button button--outline button--add">
+          <div style={isDarkMode ? {background: '#ccc'} : {}} className="button button--outline button--add">
             <svg
               width="12"
               height="12"
@@ -39,7 +41,7 @@ function PizzaBlock ({img, title, price, dough, size, description}) {
                 fill="white"
               />
             </svg>
-            <span>Добавить</span>
+            <span style={isDarkMode ? {color: '#282828'} : {}}>Добавить</span>
             <i>2</i>
           </div>
         </div>
